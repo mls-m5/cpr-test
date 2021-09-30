@@ -1,0 +1,35 @@
+
+# using matmake2: https://github.com/laserskold/matmake2
+
+cpr
+  out =
+    cpr
+  src =
+    lib/cpr/cpr/*.cpp
+  command =
+    [static]
+
+main
+  in =
+    @cpr
+  out =
+    main
+  src =
+    src/*.cpp
+  command =
+    [exe]
+  ldflags =
+    -lcurl
+
+all
+  config =
+    c++17
+    Wall
+  in =
+    @main
+    @cpr
+  includes =
+    include
+  includes =
+    lib/cpr/include/
+
